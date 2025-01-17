@@ -1,3 +1,5 @@
+import { Editor } from "./editor";
+
 interface DocumentIdPageProps {
     params: Promise<{ documentId: string}>;
 };
@@ -5,8 +7,8 @@ interface DocumentIdPageProps {
 const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
     const { documentId } = await params;
     return ( 
-        <div>
-            <h1 className="text-purple-700">Document ID: {documentId}</h1>
+        <div className="min-h-screen bg-[#FAFBFD]">
+            <Editor />
         </div>
     );
 }
