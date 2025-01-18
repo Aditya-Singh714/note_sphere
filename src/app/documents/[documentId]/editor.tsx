@@ -10,6 +10,8 @@ import TableRow from '@tiptap/extension-table-row';
 import Image from '@tiptap/extension-image';
 import Underline from '@tiptap/extension-underline';
 import FontFamily from '@tiptap/extension-font-family';
+import { Color } from '@tiptap/extension-color';
+import Highlight from '@tiptap/extension-highlight';
 import TextStyle from '@tiptap/extension-text-style';
 import ImageResize from 'tiptap-extension-resize-image';
 import { useEditor, EditorContent } from '@tiptap/react'
@@ -51,12 +53,6 @@ export const Editor = () => {
     extensions: [
       StarterKit,
       TaskList,
-      TaskItem.configure({
-        nested: true,
-      }),
-      Table.configure({
-        resizable: true,
-      }),
       TableRow,
       TableHeader,
       TableCell,
@@ -65,6 +61,16 @@ export const Editor = () => {
       Underline,
       FontFamily,
       TextStyle,
+      Color,
+      TaskItem.configure({
+        nested: true,
+      }),
+      Table.configure({
+        resizable: true,
+      }),
+      Highlight.configure({
+        multicolor: true,
+      }),
     ],
     content: `
         <p><span style="font-family: Inter">Did you know that Inter is a really nice font for interfaces?</span></p>
