@@ -20,6 +20,8 @@ import { FontFamilyButton } from "./fontFamily";
 import { HeadingLevelButton } from "./heading";
 import { TextColorButton } from "./textColor";
 import { HighlightColorButton } from "./highlightColor";
+import { LinkButton } from "./link";
+import { ImageButton } from "./image";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -139,8 +141,8 @@ export const Toolbar = () => {
             <HighlightColorButton />
 
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-
-            {/* {TODO Image} */}
+            <LinkButton />
+            <ImageButton />
             {/* {TODO Align} */}
             {/* {TOOD Line Height} */}
             {/* {ṬODO List} */}

@@ -10,6 +10,7 @@ import TableRow from '@tiptap/extension-table-row';
 import Image from '@tiptap/extension-image';
 import Underline from '@tiptap/extension-underline';
 import FontFamily from '@tiptap/extension-font-family';
+import Link from '@tiptap/extension-link';
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import TextStyle from '@tiptap/extension-text-style';
@@ -62,6 +63,11 @@ export const Editor = () => {
       FontFamily,
       TextStyle,
       Color,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https"
+      }),
       TaskItem.configure({
         nested: true,
       }),
@@ -74,9 +80,6 @@ export const Editor = () => {
     ],
     content: `
         <p><span style="font-family: Inter">Did you know that Inter is a really nice font for interfaces?</span></p>
-
-        <p>This is a basic example of implementing images. Drag to re-order.</p>
-        <img src="https://placehold.co/800x400" />
       `,
   })
   return (
