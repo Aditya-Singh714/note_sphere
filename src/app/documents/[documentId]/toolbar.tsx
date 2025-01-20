@@ -22,6 +22,8 @@ import { TextColorButton } from "./textColor";
 import { HighlightColorButton } from "./highlightColor";
 import { LinkButton } from "./link";
 import { ImageButton } from "./image";
+import { AlignButton } from "./alignText";
+import { ListButton } from "./list";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -143,9 +145,9 @@ export const Toolbar = () => {
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             <LinkButton />
             <ImageButton />
-            {/* {TODO Align} */}
-            {/* {TOOD Line Height} */}
-            {/* {ṬODO List} */}
+            <AlignButton />
+            <ListButton />
+            {/* {ṬODO Line height} */}
 
             {sections[2].map((item) => (
                 <ToolbarButton key={item.label} {...item} />
