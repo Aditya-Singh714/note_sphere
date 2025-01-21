@@ -25,7 +25,6 @@ export const FontFamilyButton = () => {
         { label: "Cursive", value: "Cursive" },
         { label: "CSS Variable", value: "var(--font-family)" },
         { label: "Exo 2", value: "Exo 2" },
-        { label: "Unset Font Family", value: "unset" }
     ];
 
     return (
@@ -36,7 +35,7 @@ export const FontFamilyButton = () => {
                     "h-7 w-[120px] shrink-0 flex items-center justify-between rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm"
                 >
                     <span className="truncate">
-                        {editor?.getAttributes("textStyle").FontFamily || "Arial"}
+                        {editor?.getAttributes("textStyle").fontFamily || "Arial"}
                     </span>
                     <ChevronDownIcon className="ml-2 size-4 shrink-0" />
                 </button>
@@ -47,7 +46,7 @@ export const FontFamilyButton = () => {
                         onClick={() => editor?.chain().focus().setFontFamily(value).run()}
                         key={value}
                         className={cn(
-                            "flex items-center gap-x-2 px-2 rounded-sm hover:bg-neutral-200/80", editor?.getAttributes("textStyle").FontFamily === value && "bg-neutral-200/80"
+                            "flex items-center gap-x-2 px-2 rounded-sm hover:bg-neutral-200/80", editor?.getAttributes("textStyle").fontFamily === value && "bg-neutral-200/80"
                         )}
                         style={{ fontFamily: value }}
                     >

@@ -25,6 +25,7 @@ import { ImageButton } from "./image";
 import { AlignButton } from "./alignText";
 import { ListButton } from "./list";
 import { FontSizeButton } from "./fontSize";
+import { LineHeightButton } from "./lineHeight";
 
 interface ToolbarButtonProps {
     onClick?: () => void;
@@ -150,7 +151,7 @@ export const Toolbar = () => {
             <ImageButton />
             <AlignButton />
             <ListButton />
-            {/* {ṬODO Line height} */}
+            <LineHeightButton />
 
             {sections[2].map((item) => (
                 <ToolbarButton key={item.label} {...item} />
