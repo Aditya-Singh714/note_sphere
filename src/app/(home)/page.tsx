@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Navbar } from "./navbar";
+import { TemplatesGallery } from "./templates-gallery";
+
 
 const Home = () => {
   return (
@@ -9,11 +9,7 @@ const Home = () => {
         <Navbar />
       </div>
       <div className="m-16">
-      <Button>
-        <Link href="/documents/123">
-        Click me
-        </Link>
-      </Button>
+      <TemplatesGallery />
       </div>
     </div>
   );
