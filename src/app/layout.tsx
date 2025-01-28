@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google"
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import "./globals.css";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -25,7 +26,9 @@ export default function RootLayout({
         className={poppins.className}
       >
         <NuqsAdapter>
+          <ConvexClientProvider>
           {children}
+          </ConvexClientProvider>
         </NuqsAdapter>
       </body>
     </html>
