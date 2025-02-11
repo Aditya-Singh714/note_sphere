@@ -2,6 +2,8 @@
 
 import { usePaginatedQuery } from "convex/react";
 
+import { useSearchParams } from "@/hooks/use-search-params";
+
 import { Navbar } from "./navbar";
 import { TemplatesGallery } from "./templates-gallery";
 
@@ -10,7 +12,11 @@ import { DocumentsTable } from "./documents-table";
 
 
 const Home = () => {
-  const { results, status, loadMore } = usePaginatedQuery(api.documents.getDocuments, {}, {initialNumItems: 5});
+  const [search] = useSearchParams();
+  const { 
+    results, 
+    status, 
+    loadMore } = usePaginatedQuery(api.documents.getDocuments, { search }, {initialNumItems: 5});
 
   return (
     <div className="min-h-screen flex flex-col">
